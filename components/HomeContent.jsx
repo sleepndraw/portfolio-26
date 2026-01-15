@@ -198,7 +198,7 @@ const HomeContent = () => {
                 </div>
                
               </div>
-               <div className="download-button"><a href="../public/mock/docs/CV2025_es.pdf">Descargar CV</a> <FontAwesomeIcon icon={faArrowDown} /> </div>
+               <div className="download-button"><a href="/mock/docs/CV2025_es.pdf">Descargar CV</a> <FontAwesomeIcon icon={faArrowDown} /> </div>
             </div>
             <div className="d3">
               <div className="skills-container">
