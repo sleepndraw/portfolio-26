@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Space+Grotesk:wght@300..700&display=swap");
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  background-color: #1B0E14;
+  padding: 0.5rem 0.5rem;
+}
+
+.slider-track {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  animation: scroll var(--scroll-duration, 12s) linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.slider-item {
+  padding-right: 1rem;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  color: #FFFBF7;
+  will-change: transform;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.slider-measure {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  visibility: hidden;
+  white-space: nowrap;
+}/*# sourceMappingURL=loopingtext.css.map */

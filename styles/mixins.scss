@@ -1,0 +1,214 @@
+@import 'variables.scss';
+
+
+@mixin atSmall {
+  @media screen and (min-width: 520px) {
+    @content;
+  }
+}
+
+@mixin atMedium {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+// max - width para pantallas más pequeñas que esa medida
+@mixin atSmallMax {
+  @media screen and (max-width: 519px) {
+    @content;
+  }
+}
+
+@mixin atMediumMax {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+
+@mixin respond-to($breakpoint, $constraint: 'min-width') {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    
+    @if $constraint == 'max-width' {
+      // Calculate the value first, then use it
+      $max-value: $breakpoint-value - 1px;
+      @media (max-width: $max-value) {
+        @content;
+      }
+    } @else {
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' not found in $breakpoints map";
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@mixin font-size($size) {
+  @if map-has-key($font-sizes, $size) {
+    font-size: map-get($font-sizes, $size);
+  } @else {
+    @error "Font size '#{$size}' not found in $font-sizes map. Available sizes: #{map-keys($font-sizes)}";
+  }
+}
+@mixin font-weight($weight) {
+  @if map-has-key($font-weights, $weight) {
+    font-weight: map-get($font-weights, $weight);
+  } @else {
+    @error "Font weight '#{$weight}' not found in $font-weights map. Available sizes: #{map-keys($font-weights)}";
+  }
+}
+
+@mixin padding($top, $right: null, $bottom: null, $left: null) {
+  padding: $top $right $bottom $left;
+}
+
+@mixin padding-small($top, $right: null, $bottom: null, $left: null) {
+  @include respond-to('small') {
+    padding: $top $right $bottom $left;
+  }
+}
+
+@mixin padding-medium($top, $right: null, $bottom: null, $left: null) {
+  @include respond-to('medium') {
+    padding: $top $right $bottom $left;
+  }
+}
+
+@mixin margin($top, $right: null, $bottom: null, $left: null) {
+  margin: $top $right $bottom $left;
+}
+
+@mixin margin-small($top, $right: null, $bottom: null, $left: null) {
+  @include respond-to('small') {
+    margin: $top $right $bottom $left;
+  }
+}
+
+@mixin gap($gap){
+  @include respond-to('small') {
+    gap: $gap;
+  }
+  @include respond-to('medium') {
+    gap: $gap;
+  }
+}
+
+// responsive-spacing: set a property with different spacing tokens per breakpoint
+// Usage: @include responsive-spacing(margin, sp('sm'), sp('md'), sp('lg'));
+@mixin responsive-spacing($property, $value-small, $value-medium: null, $value-large: null) {
+  #{$property}: $value-small;
+  @if $value-medium {
+    @include respond-to('medium') {
+      #{$property}: $value-medium;
+    }
+  }
+  @if $value-large {
+    @include respond-to('large') {
+      #{$property}: $value-large;
+    }
+  }
+}
+
+
+@mixin margin-medium($top, $right: null, $bottom: null, $left: null) {
+  @include respond-to('medium') {
+    margin: $top $right $bottom $left;
+  }
+}
+@mixin tag-default{
+  display: inline-block;
+  background-color: transparent;
+  color: $text-color;
+  padding: .5rem 1rem .5rem 1rem;
+  border: 2px solid $text-color;
+  border-radius: 20px;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+}
+@mixin tag-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: $text-color;
+  padding: sp('xs') sp('sm');
+  border-radius: 9999px;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+  /* stroke */
+  border: 2px solid $text-color;
+}
+@mixin button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  text-decoration: none!important;
+  cursor: pointer;
+  color: $text-color;
+  padding: sp('md') sp('lg');
+  border-radius: 9999px;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+  /* stroke */
+  background-color: $text-color;
+  color: $primary-color;
+  border: 2px solid $text-color;
+  transition: background-color 0.25s ease, transform 0.25 ease;
+
+
+}
+@mixin button-hover{
+  display: inline-flex;
+  // gap: sp('md');
+  
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: $text-color;
+  padding: sp('md') sp('lg');
+  border-radius: 9999px;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+  /* stroke */
+  background-color: $primary-color;
+  color: $text-color;
+  border: 2px solid $text-color;
+  transform: translateY(-2px);
+}
+
+
+@mixin tag-pill-hover{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: $text-color;
+  padding: sp('xs') sp('sm');
+  border-radius: 9999px;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+  /* stroke */
+  border: 2px solid $primary-color;
+  color:$primary-color;
+}

@@ -1,0 +1,107 @@
+{
+  "categories": [
+    {
+      "id": "UIUX-projects",
+      "name": "Diseño UI/UX",
+      "projects": [
+        {
+          "id": 1,
+          "title": "Castor",
+          "subtitle": "Red de ayuda comunitaria",
+          "body": "¿Quién necesita ayuda? Este proyecto nace como respuesta a las consecuencias de la crisis climática, poniendo el foco en la gestión de las consecuencias de las catástrofes desde una perspectiva de ayuda de carácter colaborativo y comunitario. Castor nace como una iniciativa que propone que lo mejor que podemos hacer para reducir el impacto posterior a una catástrofe natural, es trabajar en equipo. Esta es una herramienta que se propone conectar a los usuarios tanto para pedir como para ofrecer ayuda, en todo tipo de formato: comida, transporte, cuidados...",
+          "tags": ["UI/UX", "social", "Figma", "Prototipado"],
+          "thumbnail": "/mock/images/project-1-thumb.png",
+          "images": [
+            "/mock/images/project-1_1.png",
+            "/mock/images/project-1-thumb.png",
+            "/mock/images/logo_v2_castor.png"
+          ],
+          "link": "/works#UIUX-projects"
+        },
+        {
+          "id": 2,
+          "title": "Codo: Consumo cuidado",
+          "subtitle": "Diseño para la reducción de riesgos en el consumo recreativo de sustancias",
+          "body": "El estigma inculcado por bulos y campañas antidroga perjudica a los adictos e invisibiliza al consumidor casual, que también necesita herramientas accesibles, principalmente de carácter informativo y educativo. Codo se plantea como una herramienta regida por los principios de la reducción de riesgos, cuya finalidad es proporcionar una comunicación clara y utilitaria, sobre información tanto de sustancias, como de noticias y análisis en tiempo real.",
+          "tags": ["Mobile", "UI/UX", "Prototipado"],
+          "thumbnail": "/mock/images/app_home.png",
+          "images": [
+            "/mock/images/app_home.png",
+            "/mock/images/stand.png",
+            "/mock/images/desplegable1_todo_color2.png"
+          ],
+          "link": "/works#UIUX-projects"
+        }
+      ]
+    },
+    {
+      "id": "graphic-design",
+      "name": "Gráfico",
+      "projects": [
+        {
+          "id": 3,
+          "title": "Art of Skate",
+          "subtitle": "Identidad corporativa completa",
+          "body": "Desarrollo de una identidad visual completa para un proyecto sobre la cultura del diseño en el mundo del skate. El proyecto abarca desde el diseño del logotipo hasta diferentes aplicaciones gráficas en packaging, cartelería y diversos soportes impresos, desde folletos a pegatinas.",
+          "tags": ["Branding", "Diseño gráfico", "Packaging", "Print", "Tipografía", "ilustración"],
+          "thumbnail": "/mock/images/art_of_skate.jpg",
+          "images": [
+            "/mock/images/art_of_skate.jpg",
+            "/mock/images/recurso 16 1.png",
+            "/mock/images/poster 1.png"
+          ],
+          "link": "/works#graphic-design"
+        },
+                {
+          "id": 4,
+          "title": "Maquetación editorial",
+          "subtitle": "What we see when we read",
+          "body": "Rediseño y maqueta física del libro: What we see when we read de Peter Mendelsung. </br> Inspirada por sus ediciones originales, en las que buscan realizar una fusión conceptial entre lo que se comunica mediantre texto y mediante imágenes, grandes textos irrumpen en la monotonía de los párrafos, que aparecen en diversos formatos.",
+          "tags": ["Editorial", "gráfico", "Magazine"],
+          "thumbnail": "/mock/images/mockuppags3 1.png",
+          "images": [
+            "/mock/images/mockuppags1 1.png",
+            "/mock/images/mockuppags2 1.png",
+            "/mock/images/mockuppags5 1.png"
+          ],
+          "link": "/works#graphic-design"
+        },
+        {
+          "id": 5,
+          "title": "Pablo",
+          "subtitle": "Ilustraciones para libro infantil",
+          "body": "La historia de Pablo se basa en Juul de Gergie de Maeyer y Kown Vanmelechen, un libro inspirado por una devastadora noticia: el suicidio de un niño de 13 años víctima del bullying.<br>En esta ada`tación, tratamos de conservar el impacto emocional de la historia con un acercamiento más personal a su protagonista. El personaje, de enormes y expresivos ojos, y la limitada paleta de color, concentran toda la emocionalidad en estas ilustraciones.</br>",
+          "tags": ["ilustración", "editorial", "gráfico"],
+          "thumbnail": "/mock/images/pablomockupportada 1.png",
+          "images": [
+            "/mock/images/pablomockupportada 1.png",
+            "/mock/images/pablopagsmockup 1.png",
+            "/mock/images/posters-3.jpg"
+          ],
+          "link": "/works#ilustración"
+        }
+      ]
+    },
+    {
+      "id": "ilustración",
+      "name": "Ilustración",
+      "projects": [
+        {
+          "id": 6,
+          "title": "Wallapop, welcome to the jungle",
+          "subtitle": "Ilustraciones para infografía",
+          "body": "¿Qué nos deparará la jungla de internet? En esta divertida infografía, exploramosw los diferentes tipos de vendedor que podemos encontrar en la popular plataforma de venta de segunda mano.",
+          "tags": ["Digital Art", "Character Design", "Book", "Color", "Storytelling"],
+          "thumbnail": "/mock/images/info.jpg",
+          "images": [
+            "/mock/images/walla1.png",
+            "/mock/images/walla2.png",
+            "/mock/images/info.jpg"
+          ],
+          "link": "/works#ilustración"
+        }
+
+      ]
+    }
+  ]
+}

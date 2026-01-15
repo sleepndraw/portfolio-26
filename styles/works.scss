@@ -1,0 +1,108 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+
+.project-text_body{
+    // font-family: "Space Grotesk";
+}
+.works-page {
+  margin-left: 2rem;
+              @include responsive-spacing(padding-left, $gutter-sm, $gutter-md, $gutter-lg);
+        @include responsive-spacing(padding-right, $gutter-sm, $gutter-md, $gutter-lg);
+   @include responsive-spacing(padding-bottom, $gutter-sm, $gutter-md, $gutter-lg);
+    @include responsive-spacing(margin-top, $gutter-sm, $gutter-md, $gutter-lg);
+
+  .works-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  article.project {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // text left, images right
+    gap: 2.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    // padding: 1.5rem;
+
+
+    .project-text {
+      padding-right: 1.5rem;
+
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      h4 {
+        margin-bottom: 1rem;
+        font-weight: normal;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        .tag {
+          @include tag-pill;
+        }
+      }
+
+      .project-text_body {
+        margin-top: 1rem;
+      }
+    }
+
+    .project-images {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 1rem;
+
+      .large-image {
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+
+      .small-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        img, span {
+          width: 100%;
+          height: auto;
+          border-radius: 0.5rem;
+          overflow: hidden;
+          display: block;
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+
+      .project-images {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+
+        .large-image {
+          grid-column: span 2;
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      padding: 0.75rem;
+
+      .project-images {
+        grid-template-columns: 1fr;
+
+        .small-images {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}

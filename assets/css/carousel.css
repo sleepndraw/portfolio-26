@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Space+Grotesk:wght@300..700&display=swap");
+.simple-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 12rem;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  position: relative;
+}
+.carousel-viewport::before, .carousel-viewport::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 12rem;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+.carousel-viewport::before {
+  left: 0;
+  background: linear-gradient(to right, #FFFBF7 0%, transparent 100%);
+}
+.carousel-viewport::after {
+  right: 0;
+  background: linear-gradient(to left, #FFFBF7 0%, transparent 100%);
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  will-change: transform;
+  gap: 1.5rem;
+}
+
+.slide-item {
+  flex-shrink: 0;
+  will-change: transform;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .slide-item {
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .slide-item {
+    width: 33.3333333333%;
+  }
+}
+
+/* NAV BUTTONS */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.nav-btn.prev {
+  left: 12px;
+}
+.nav-btn.next {
+  right: 12px;
+}/*# sourceMappingURL=carousel.css.map */

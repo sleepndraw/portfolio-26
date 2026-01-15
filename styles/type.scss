@@ -1,0 +1,86 @@
+@import 'variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+@import 'mixins.scss';
+
+h1{
+  font-family:"Tilt Warp" ;
+  @include font-size('large');
+  @include font-weight('bold');
+  @include respond-to('medium'){
+    @include font-size('xl');
+  }
+  @include respond-to('large'){
+    @include font-size('xxl');
+  }
+}
+h2{
+  font-family:"Space Grotesk" ;
+  @include font-size('large');
+  @include font-weight('bold')
+}
+h3{
+  font-family: "Space Grotesk" ;
+  @include font-size('medium');
+  @include font-weight('semibold');
+}
+h4{
+  font-family:"Space Grotesk" ;
+  @include font-size('body');
+  @include font-weight('normal');
+}
+nav{
+  h4, button,a {
+      font-family:"Space Grotesk" ;
+      @include font-size('medium');
+      @include font-weight('normal');
+    }
+}
+body, p{
+  font-family:"Space Grotesk" ;
+  @include font-size('body');
+  @include font-weight('normal');
+  .smalltext{
+    @include font-size('xs');
+    @include font-weight('normal');
+    @include respond-to('medium'){
+      @include font-size('small');
+    }
+  }
+}
+.slider-item{
+  font-family:"Space Grotesk" ;
+  font-weight: 100;
+}
+.tag{
+  font-family:"Space Grotesk" ;
+  @include font-weight('normal');
+}
+.date-pill{
+  font-family:"Space Grotesk" ;
+  @include font-weight('normal');
+}
+
+// Mobile typography adjustments: make type smaller below `medium` breakpoint
+@include respond-to('medium', 'max-width') {
+  h1 {
+    @include font-size('xl');
+  }
+  h2 {
+    @include font-size('medium');
+  }
+  h3 {
+    @include font-size('medium');
+  }
+  h4 {
+    @include font-size('xs');
+  }
+  body, p {
+    @include font-size('small');
+  }
+  .slider-item {
+    font-family: "Space Grotesk";
+    font-weight: 100;
+    @include font-size('xs');
+  }
+}

@@ -1,0 +1,101 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.simple-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 12rem;
+
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  position: relative;
+ 
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 12rem; // fade width
+    height: 100%;
+    z-index: 5;
+    pointer-events: none; // let clicks pass
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, $primary-color 0%, transparent 100%);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, $primary-color 0%, transparent 100%);
+  }
+  
+}
+
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  will-change: transform;
+  gap: sp('lg'); // your spacing
+  
+}
+
+.slide-item {
+  flex-shrink: 0;
+//   border-radius: 16px;
+  will-change: transform;
+
+  // default: 1 slide per viewport
+  width: 100%;
+
+  // tablet: 2 slides
+  @include respond-to('medium') {
+    width: calc(100% / 2);
+  }
+
+  // desktop: 3 slides
+  @include respond-to('large') {
+    width: calc(100% / 3);
+  }
+}
+
+/* NAV BUTTONS */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+
+  @include flex-center;
+
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  &.prev {
+    left: 12px;
+  }
+
+  &.next {
+    right: 12px;
+  }
+}

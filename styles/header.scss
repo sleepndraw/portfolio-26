@@ -1,0 +1,148 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $mobile-header-height;
+    background-color: $primary-color;
+    z-index: 1000;
+    background: rgb(255,251,247);
+    background: linear-gradient(180deg, rgba(255,251,247,1) 0%, rgba(255,251,247,1) 100%);
+    transition: all 0.3s ease;
+  
+    .menu-toggle {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: $text-color;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+      display: none;
+      
+      @include respond-to('medium', 'max-width') {
+        display: block;
+        background-color: $primary-color;
+      }
+    }
+  
+    nav {
+      height: 100%;
+  
+      ul {
+        @include flex-center;
+        height: 100%;
+        width: max-content;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        position: absolute;
+        height: fit-content;
+        width: 100%;
+        background-color: darken($primary-color, 5%);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+  
+        @include respond-to('medium') {
+          position: relative;
+          top: auto;
+          flex-direction: row;
+          justify-content: center;
+          background: linear-gradient(180deg, rgba(255,251,247,1) 0%, rgba(255,251,247,1) 100%);
+          max-height: none;
+          opacity: 1;
+        }
+  
+        &.menu-open {
+          max-height: 100vh;
+          opacity: 1;
+        }
+        @include respond-to('small'){
+          background: $primary-color;
+        }
+        li {
+          width: 100%;
+          text-align: center;
+          opacity: 0;
+          transform: translateY(-20px);
+          transition: all 0.3s ease;
+  
+          @include respond-to('medium') {
+            width: auto;
+            opacity: 1;
+            transform: translateY(0);
+            margin: 0 sp('md');
+          }
+  
+          @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+              transition-delay: $i * 0.1s;
+            }
+          }
+  
+          a, button {
+            display: block;
+            padding: sp('sm') 0;
+            color: $text-color;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            background: none;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: relative;
+  
+            @include respond-to('medium') {
+              padding: 0;
+              height: $header-height;
+              line-height: $header-height;
+            }
+  
+            &:hover {
+              color: $hover-color;
+            }
+  
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 10px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 0;
+              height: 2px;
+              background-color: $hover-color;
+              transition: width 0.3s ease;
+  
+              @include respond-to('medium') {
+                bottom: 15px;
+              }
+            }
+  
+            &:hover::after {
+              width: 80%;
+            }
+          }
+        }
+  
+        &.menu-open li {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
