@@ -19,6 +19,8 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  background-color: $primary-color;
+
   
   // color: #333;
   font-family: sans-serif;
@@ -255,7 +257,8 @@ a:visited { color: inherit; }
 
 .contact-section {
   margin-top: sp('xxl');
-  background: #faf7f2;
+  background-color: $primary-color;
+      color: $primary-color;
 
   h1 {
     @include atMediumMax { font-size: 2.4rem; }
@@ -302,7 +305,8 @@ a:visited { color: inherit; }
       align-items: center;
       gap: sp('sm');
       text-decoration: none;
-      color: inherit;
+    
+      color: $primary-color;
     }
   }
 }
