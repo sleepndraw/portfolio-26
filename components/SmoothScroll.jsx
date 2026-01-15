@@ -1,3 +1,4 @@
+// components/SmoothScroll.jsx
 import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
@@ -10,25 +11,27 @@ export default function SmoothScroll({ children }) {
     const lenis = new Lenis({
       duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
       smoothWheel: true,
-      smoothTouch: false,
+      smoothTouch: true,
+      gestureDirection: 'vertical',
+      touchMultiplier: 2,
     });
 
     function raf(time) {
       lenis.raf(time);
+      ScrollTrigger.update();
       requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
 
-    // 🔑 Sync Lenis → GSAP
-    lenis.on('scroll', ScrollTrigger.update);
+    requestAnimationFrame(raf);
 
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
         if (arguments.length) {
           lenis.scrollTo(value, { immediate: true });
         } else {
-          return lenis.scroll; // ✅ FIXED
+          return lenis.scroll;
         }
       },
       getBoundingClientRect() {
@@ -39,8 +42,10 @@ export default function SmoothScroll({ children }) {
           height: window.innerHeight,
         };
       },
+      pinType: document.body.style.transform ? 'transform' : 'fixed',
     });
 
+    ScrollTrigger.defaults({ scroller: document.body });
     ScrollTrigger.refresh();
 
     return () => {
@@ -49,5 +54,5 @@ export default function SmoothScroll({ children }) {
     };
   }, []);
 
-  return children;
+  return <>{children}</>;
 }

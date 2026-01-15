@@ -6,8 +6,8 @@
     // font-family: "Space Grotesk";
 }
 .works-page {
-  margin-left: 2rem;
-              @include responsive-spacing(padding-left, $gutter-sm, $gutter-md, $gutter-lg);
+
+              @include responsive-spacing(padding-left, $gutter-sm, $gutter-md, $gutter-md);
         @include responsive-spacing(padding-right, $gutter-sm, $gutter-md, $gutter-lg);
    @include responsive-spacing(padding-bottom, $gutter-sm, $gutter-md, $gutter-lg);
     @include responsive-spacing(margin-top, $gutter-sm, $gutter-md, $gutter-lg);

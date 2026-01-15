@@ -1080,6 +1080,16 @@ a:visited {
   background: #faf7f2;
   /* page background */
 }
+@media screen and (max-width: 767px) {
+  .contact-section h1 {
+    flex-wrap: 2rem;
+  }
+}
+@media screen and (max-width: 519px) {
+  .contact-section h1 {
+    flex-wrap: 2rem;
+  }
+}
 
 .contact-bubble {
   display: flex;

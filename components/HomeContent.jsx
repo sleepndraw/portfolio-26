@@ -190,7 +190,7 @@ const HomeContent = () => {
               </div>
               <div className="info-container">
                 <div className="date-pill">
-                  <h3>2025</h3>
+                  <h3>2025-actual</h3>
                 </div>
                 <div className="text_content">
                   <h3>Diseñadora web & wordpress</h3>
@@ -198,7 +198,7 @@ const HomeContent = () => {
                 </div>
                
               </div>
-               <div className="download-button"><a href="/mock/docs/CV2025_es.pdf">Descargar CV</a> <FontAwesomeIcon icon={faArrowDown} /> </div>
+               <div className="download-button"><a download="CV2025_es.pdf" target="_blank" rel="noopener noreferrer" href="/mock/docs/CV2025_es_v2.pdf">Descargar CV</a> <FontAwesomeIcon icon={faArrowDown} /> </div>
             </div>
             <div className="d3">
               <div className="skills-container">
